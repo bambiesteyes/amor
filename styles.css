@@ -1,0 +1,23 @@
+@import url('https://db.onlinewebfonts.com/c/69e9ea8abb036e46c98ec53b50124505?family=F1491+Cancellaresca+W00+Normal');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+:root { --ink:#121210; --paper:#f2f0e7; --envelope:#e9e8e1; --background:#050505; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); font-family:'DM Mono', monospace; background:var(--background); }
+.scene { min-height:100vh; display:grid; place-content:center; justify-items:center; gap:24px; overflow:hidden; background:#050505; }
+.eyebrow,.hint { margin:0; color:#dddcd5; font-size:10px; letter-spacing:.18em; }
+.envelope { position:relative; width:min(74vw,520px); aspect-ratio:1.55; border:0; padding:0; background:transparent; cursor:pointer; perspective:1000px; transition:transform .3s ease; }
+.envelope:hover { transform:translateY(-7px); }.envelope:focus-visible { outline:3px solid #eee; outline-offset:10px; }
+.envelope-back,.envelope-front,.envelope-flap { position:absolute; inset:0; border-radius:4px; }
+.envelope-back { background:var(--envelope); box-shadow:0 26px 42px #000; }
+.letter-preview { position:absolute; z-index:1; width:84%; height:83%; left:8%; bottom:8%; background:var(--paper); transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+.envelope-front { z-index:3; background:linear-gradient(32deg,transparent 49.4%,#f3f2ec 50%),linear-gradient(-32deg,transparent 49.4%,#d7d5cc 50%); clip-path:polygon(0 0,50% 53%,100% 0,100% 100%,0 100%); }
+.envelope-flap { z-index:4; background:#eeede6; clip-path:polygon(0 0,100% 0,50% 53%); transform-origin:top; transition:transform .7s cubic-bezier(.2,.8,.2,1); }
+.envelope-name { position:absolute; z-index:6; right:9%; bottom:10%; color:#3f3f3b; font:clamp(62px,10vw,112px)/.63 'Pinyon Script',cursive; transform:rotate(-5deg); }
+.envelope.open .envelope-flap { transform:rotateX(180deg); z-index:0; }.envelope.open .letter-preview { transform:translateY(-48%) rotate(-1.5deg); }.envelope.open { transform:translateY(22px); }
+.letter-page { min-height:100vh; background:#050505; }.letter-page nav { display:flex; align-items:center; justify-content:space-between; max-width:780px; margin:auto; padding:24px 20px; color:#e8e7df; font-size:10px; letter-spacing:.15em; }.letter-page nav a { color:inherit; text-decoration:none; }.paper-wrap { padding:10px 20px 45px; }
+.paper { position:relative; width:min(100%,720px); min-height:760px; margin:auto; padding:clamp(35px,8vw,75px); background:var(--paper); box-shadow:0 18px 48px #000; }
+.paper-top { display:flex; justify-content:space-between; gap:15px; align-items:center; }.date { margin:0; font:14px/1.45 'Helvetica Neue',Helvetica,Arial,sans-serif; }.letter-title { display:block; width:100%; margin:68px 0 24px; color:var(--ink); font:clamp(62px,10vw,112px)/.63 'Pinyon Script',cursive; }.letter-content { min-height:250px; font:14px/1.45 'Helvetica Neue',Helvetica,Arial,sans-serif; }.letter-content p { margin:0 0 19px; }.letter-content .signature { margin-top:42px; font:14px/1.45 'Helvetica Neue',Helvetica,Arial,sans-serif; }.gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:34px; }.gallery img { display:block; width:100%; aspect-ratio:1.2; object-fit:cover; padding:7px; border:1px solid #111; background:#e8e7df; filter:grayscale(1) contrast(1.16); }.gallery img:nth-child(even) { transform:rotate(2deg); }.gallery img:nth-child(odd) { transform:rotate(-2deg); }.paper-footer { margin:48px 0 0; text-align:center; font-size:9px; letter-spacing:.15em; }.music-card { position:fixed; z-index:10; top:18px; right:18px; width:220px; padding:8px; border:1px solid #e8e7df; color:#e8e7df; background:#101010; box-shadow:0 8px 22px #0008; }.music-card p { margin:0 0 7px; font-size:8px; letter-spacing:.12em; }.spotify-player { display:block; width:100%; height:152px; border:0; border-radius:3px; }.save-status { display:none; }
+@media (max-width:1050px) { .music-card { position:static; width:min(100%,720px); margin:22px auto 0; } }
+@media (max-width:520px) { .paper { padding:34px 25px; }.paper-top { align-items:flex-start; flex-direction:column; }.letter-title { margin-top:48px; }.letter-content { font-size:17px; }.gallery { grid-template-columns:1fr; } }
