@@ -22,8 +22,6 @@ body { margin:0; color:var(--ink); font-family:'DM Mono', monospace; background:
 @media (max-width:1050px) { .music-card { position:static; width:min(100%,720px); margin:22px auto 0; } }
 @media (max-width:520px) { .paper { padding:34px 25px; }.paper-top { align-items:flex-start; flex-direction:column; }.letter-title { margin-top:48px; }.letter-content { font-size:17px; }.gallery { grid-template-columns:1fr; } }
 @media (max-width: 600px) {
-  .letter-content p {
-    font-size: 10px;
-    line-height: 1.6;
-  }
+  .letter-content { font-size: 14px; }
+  .letter-content p { font-size: 14px; line-height: 1.5; }
 }
