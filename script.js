@@ -3,6 +3,6 @@ if (envelope) {
   envelope.addEventListener('click', () => {
     envelope.classList.add('open');
     document.querySelector('#hint').textContent = 'la carta está lista';
-    window.setTimeout(() => { window.location.href = 'carta.html'; }, 1050);
+    window.setTimeout(() => { window.location.href = 'indexcarta.html'; }, 1050);
   });
 }
